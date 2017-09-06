@@ -1,11 +1,16 @@
 # Corgi-cli
 
-Forked from [labrador-cli](https://github.com/maichong/labrador-cli)
+Fork from [wepy-cli](https://github.com/wepyjs/wepy/tree/master/packages/wepy-cli)
 
-精简Labrador功能：
-* 仅提供初始化项目、构建相关功能
-* 移除对labrador相关库及redux, redux-saga等的依赖
-* 精简模版，仅使用微信小程序官方API
+## Idea
+
+不想使用`wepy`但是又希望获得“现代前端开发”体验:
+* ES2015+ feature
+* Typescript
+* npm package
+* SCSS, less
+
+`wepy-cli`的idea很棒，希望Fork出来做一些改进后能达到这个目标。
 
 ## License
 
