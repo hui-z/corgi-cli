@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-'use strict';
-
 process.title = 'corgi';
 
-require('../next/corgi');
+require('../src/corgi');
