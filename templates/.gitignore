@@ -1,0 +1,10 @@
+npm-debug.log*
+node_modules
+.npm
+.idea/
+.build/
+dist/
+
+.wepycache
+.vscode
+.DS_Store

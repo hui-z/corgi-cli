@@ -1,0 +1,41 @@
+<view class="root">
+  <view class="todo-input">
+    <button class="{{todos.length === completed ? 'toggle-all completed' : 'toggle-all'}}" plain bindtap="toggleAll">
+    </button>
+    <input 
+      placeholder="What needs to be done?" 
+      value="{{todoInput}}"
+      bindinput="inputChange"
+      bindconfirm="addTodo"
+      autofocus
+    />
+  </view>
+  <scroll-view scroll-y class="todos-list">
+    <view class="{{item.completed ? 'todo completed' : 'todo'}}" wx:for="{{todos}}" wx:key="{{item.id}}">
+      <checkbox-group bindchange="toggleComplete" data-todo="{{item}}">
+        <label class="checkbox">
+          <checkbox value="{{item.id}}" checked="{{item.completed}}"/>
+        </label>
+      </checkbox-group>
+      <text>{{item.title}}</text>
+    </view>
+  </scroll-view>
+
+  <view class="footer">
+    <view class="left-items">
+      {{activated}} items left
+    </view>
+    <radio-group class="radio-group" bindchange="filterTodos">
+      <label class="radio">
+        <radio value="all" checked /> All
+      </label>
+      <label class="radio">
+        <radio value="active" /> Active 
+      </label>
+      <label class="radio">
+        <radio value="completed"/> Completed
+      </label>
+    </radio-group>
+    <button type="primary" bindtap="clearCompleted" disabled="{{completed === 0}}">Clear completed</button>
+  </view>
+</view>
