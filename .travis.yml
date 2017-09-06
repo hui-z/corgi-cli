@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- '7'
+deploy:
+  provider: npm
+  email: jingkai.zhao@foxmail.com
+  api_key:
+    secure: agKZh7mL+ISznwIDrRYqpPAY3ve311uP6kMSymKqlaGmIbb8RlmHdUSI27tekEAkbG4VB3cUl+zgIxYpA777Y0x/UhbZTS++qg7PODNl7Rdov4Zg969GweyH330rjssro5rrJyiv834jMOXPpxeYcz3Vp56hkYu6XhCxYp2rdda4wf7qVymbuavyfw+gDl0ptEtdj6GsomDyDx1O00weCKiP9KWD0CthfVh6Q9bcXiQbdKvM5Hj4IApsOsSqU3VuKB/aXysIvHP8ibcqBjOouhrcve3bAyDEUc0Zr31/u+JDiBRub+w+wu7SLvx5mOx8wZtlsL3lQuXr2vpEOGIzuPa0CuNwZ0SRBiGabSJuUsDmwftWaQFSr4yadF6Ll/XwViWO6bJvZUldKIDDajvHy427jjk0I1OrpYxY+sCyb/IygY4Lrai5dz4cGk1Eawvb8yBvABFPY/a44KOBqZ7h4gB3HFTAlG1TWFRg8pmoiyW1fNM3EK65+YEvh2Dek7lkRNgVogaDLxWcAcE/v4mvHe9CtfSfC+/yUJqK9sYhKaqEp/ZsNhp109ssyBlbEOB5QFFBTQky4Ndxm2WbwUTJo7PTXwWchgWXfRqc81oJ89jgHTIZR95ckku9QeEYcl4IMrKZfxYWs0q7otOtab4PVoPPtUUy3cFZkvx8PBwkyhg=
+  on:
+    tags: true
+    repo: hui-z/corgi-cli
+    branch: master
