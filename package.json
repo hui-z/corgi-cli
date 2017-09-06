@@ -1,7 +1,7 @@
 {
   "name": "corgi-cli",
-  "version": "1.0.1",
-  "description": "使用npm模块开发微信小程序",
+  "version": "0.1.5",
+  "description": "使用现代前端工具开发微信小程序",
   "keywords": [
     "wxa",
     "wxapp",
@@ -24,7 +24,7 @@
   },
   "author": {
     "email": "jingkai.zhao@foxmail.com",
-    "name": "Jingkai",
+    "name": "jkzing",
     "url": "https://github.com/jkzing"
   },
   "license": "MIT",
