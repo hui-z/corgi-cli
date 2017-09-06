@@ -5,7 +5,7 @@ const ignore = require('ignore');
 
 const cache = require('./cache');
 const util = require('./util');
-// import cStyle from './compile-style';
+const cStyle = require('./compile-style');
 const cScript = require('./compile-script');
 
 const loader = require('./loader');
@@ -256,13 +256,13 @@ module.exports = {
         }
 
         switch(opath.ext) {
-            // case '.less':
-            //     cStyle.compile('less', opath);
-            //     break;
-            // case '.sass':
-            // case '.scss':
-            //     cStyle.compile('sass', opath);
-            //     break;
+            case '.less':
+                cStyle.compile('less', opath);
+                break;
+            case '.sass':
+            case '.scss':
+                cStyle.compile('sass', opath);
+                break;
             case '.js':
                 cScript.compile('babel', null, 'js', opath);
                 break;

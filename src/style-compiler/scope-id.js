@@ -1,9 +1,9 @@
 // copy https://github.com/vuejs/vue-loader/blob/master/lib/style-compiler/plugins/scope-id.js and fix by wepy
 
-import postcss from 'postcss';
-import selectorParser from 'postcss-selector-parser';
+const postcss = require('postcss');
+const selectorParser = require('postcss-selector-parser');
 
-export default postcss.plugin('add-id', function (id) {
+module.exports = postcss.plugin('add-id', function (id) {
     return function (root) {
         root.each(function rewriteSelector (node) {
             if (!node.selector) {

@@ -1,17 +1,17 @@
-import path from 'path';
-import fs from 'fs';
-import util from './util';
-import cache from './cache';
+const path = require('path');
+const fs = require('fs');
+const util = require('./util');
+const cache = require('./cache');
 
-import loader from './loader';
-import scopedHandler from './style-compiler/scoped';
+const loader = require('./loader');
+const scopedHandler = require('./style-compiler/scoped');
 
 const LANG_MAP = {
     'less': '.less',
     'sass': '.sass;.scss'
 };
 
-export default {
+module.exports = {
     compile (styles, requires, opath, moduleId) {
         let config = util.getConfig();
         let src = cache.getSrc();
