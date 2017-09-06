@@ -1,0 +1,57 @@
+{
+  "name": "corgi-cli",
+  "version": "1.0.1",
+  "description": "使用npm模块开发微信小程序",
+  "keywords": [
+    "wxa",
+    "wxapp",
+    "weixin",
+    "wechat"
+  ],
+  "main": "index.js",
+  "bin": {
+    "corgi": "bin/corgi"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "next"
+  ],
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hui-z/corgi-cli.git"
+  },
+  "author": {
+    "email": "jingkai.zhao@foxmail.com",
+    "name": "Jingkai",
+    "url": "https://github.com/jkzing"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hui-z/corgi-cli/issues"
+  },
+  "homepage": "https://github.com/hui-z/corgi-cli#readme",
+  "dependencies": {
+    "chokidar": "^1.6.1",
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "compare-versions": "^3.0.0",
+    "hash-sum": "^1.0.2",
+    "ignore": "^3.2.0",
+    "js-base64": "^2.1.9",
+    "mkdirp": "^0.5.1",
+    "postcss": "^5.2.16",
+    "postcss-selector-parser": "^2.2.3",
+    "update-notifier": "^1.0.2",
+    "xmldom": "^0.1.22"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.10.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.7.1"
+  }
+}
