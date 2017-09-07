@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-const path = require('path');
-
 process.title = 'corgi';
 
-require(path.resolve('src/corgi'));
+require('../src/corgi');
