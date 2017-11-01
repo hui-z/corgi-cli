@@ -229,12 +229,13 @@ module.exports = {
 
         files.forEach((f) => {
             let opath = path.parse(path.join(current, src, f));
+            let { notify } = config;
             if (file) {
-                this.compile(opath);
+                this.compile(opath, notify);
             } else { // 不指定文件编译时，跳过引用文件编译
                 let refs = this.findReference(f);
                 if (!refs.length)
-                    this.compile(opath);
+                    this.compile(opath, notify);
             }
         });
 
@@ -244,7 +245,7 @@ module.exports = {
             this.watch(config);
         }
     },
-    compile(opath) {
+    compile(opath, notify) {
         let src = cache.getSrc();
         let dist = cache.getDist();
         let ext = cache.getExt();
@@ -257,14 +258,14 @@ module.exports = {
 
         switch(opath.ext) {
             case '.less':
-                cStyle.compile('less', opath);
+                cStyle.compile(notify, 'less', opath);
                 break;
             case '.sass':
             case '.scss':
-                cStyle.compile('sass', opath);
+                cStyle.compile(notify, 'sass', opath);
                 break;
             case '.js':
-                cScript.compile('babel', null, 'js', opath);
+                cScript.compile(notify, 'babel', null, 'js', opath);
                 break;
             default:
                 util.output('拷贝', path.join(opath.dir, opath.base));

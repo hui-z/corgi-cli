@@ -13,7 +13,7 @@ const LANG_MAP = {
 };
 
 module.exports = {
-    compile (styles, requires, opath, moduleId) {
+    compile (notify, styles, requires, opath, moduleId) {
         let config = util.getConfig();
         let src = cache.getSrc();
         let dist = cache.getDist();
@@ -70,11 +70,13 @@ module.exports = {
             });
         }).catch((e) => {
             console.log(e);
-            notifier.notify({
-                wait: true,
-                title: 'style编译错误',
-                message: `${e.file} [${e.line}:${e.column}]`,
-            });
+            if (notify) {
+                notifier.notify({
+                    wait: true,
+                    title: 'style编译错误',
+                    message: `${e.file} [${e.line}:${e.column}]`,
+                });
+            }
         })
     }
 }
