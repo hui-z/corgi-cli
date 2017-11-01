@@ -1,6 +1,7 @@
 const path = require('path');
 const util = require('./util');
 const cache = require('./cache');
+const notifier = require('node-notifier');
 // import compileWpy from './compile-wpy';
 
 const loader = require('./loader');
@@ -232,6 +233,12 @@ module.exports = {
             cache.saveBuildCache();
         }).catch((e) => {
             console.log(e);
+            const { loc: { line, column } } = e
+            notifier.notify({
+                wait: true,
+                title: 'script编译错误',
+                message: `Line: ${line} Column: ${column}`,
+            });
         });
 
 
