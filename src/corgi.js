@@ -173,6 +173,7 @@ commander.option('--empty', '使用new生成项目时，生成空项目内容');
 commander.option('--no-lint', '使用new生成项目时，禁用eslint');
 commander.option('--mobx', '使用new生成项目时，增加mobx相关内容');
 commander.option('-w, --watch', '监听文件改动');
+commander.option('--notify', 'compile error系统通知');
 
 commander.command('build').description('编译项目').action(projectPath => {
     if (!util.isDir(path.join(util.currentDir, 'node_modules'))) {
