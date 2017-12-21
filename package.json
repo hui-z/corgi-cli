@@ -1,6 +1,6 @@
 {
   "name": "corgi-cli",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "使用现代前端工具开发微信小程序",
   "keywords": [
     "wxa",
@@ -41,6 +41,7 @@
     "ignore": "^3.2.0",
     "js-base64": "^2.1.9",
     "mkdirp": "^0.5.1",
+    "node-notifier": "^5.1.2",
     "postcss": "^5.2.16",
     "postcss-selector-parser": "^2.2.3",
     "update-notifier": "^1.0.2",

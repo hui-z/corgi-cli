@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const util = require('./util');
 const cache = require('./cache');
+const notifier = require('node-notifier');
 
 const loader = require('./loader');
 const scopedHandler = require('./style-compiler/scoped');
@@ -12,7 +13,7 @@ const LANG_MAP = {
 };
 
 module.exports = {
-    compile (styles, requires, opath, moduleId) {
+    compile (notify, styles, requires, opath, moduleId) {
         let config = util.getConfig();
         let src = cache.getSrc();
         let dist = cache.getDist();
@@ -26,7 +27,6 @@ module.exports = {
             scoped: false,
             code: util.readFile(path.join(opath.dir, opath.base)) || ''
         };
-        
 
         // styles can be an empty array
         let lang = style.type || 'css';
@@ -69,6 +69,13 @@ module.exports = {
             });
         }).catch((e) => {
             console.log(e);
+            if (notify) {
+                notifier.notify({
+                    wait: true,
+                    title: 'style编译错误',
+                    message: `${e.file} [${e.line}:${e.column}]`,
+                });
+            }
         })
     }
 }
