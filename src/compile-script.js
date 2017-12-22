@@ -100,7 +100,7 @@ module.exports = {
                     /*let dirname = path.dirname(target);
                     mkdirp.sync(dirname);*/
 
-                    this.compile('js', null, 'npm', path.parse(source));
+                    this.compile(true, 'js', null, 'npm', path.parse(source));
 
                 }
                 /*if (!buildCache[source] || buildCache[source] !== getModifiedTime(source)) {
