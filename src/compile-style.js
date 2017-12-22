@@ -28,7 +28,6 @@ module.exports = {
             code: util.readFile(path.join(opath.dir, opath.base)) || ''
         };
 
-
         // styles can be an empty array
         let lang = style.type || 'css';
         const content = style.code;
